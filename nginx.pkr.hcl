@@ -43,7 +43,7 @@ build {
 
     post-processor "docker-push" {
       ecr_login    = true
-      aws_profile  = "voyager"
+      aws_profile  = "gordonmurray"
       login_server = "https://000000000.dkr.ecr.us-east-1.amazonaws.com/"
     }
   }
