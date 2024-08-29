@@ -44,7 +44,7 @@ resource "aws_ecs_task_definition" "nginx" {
         options = {
           "awslogs-group"         = aws_cloudwatch_log_group.ecs_log_group.name
           "awslogs-region"        = var.region
-          "awslogs-stream-prefix" = "ecs"
+          "awslogs-stream-prefix" = "nginx"
         }
       }
     }
@@ -81,8 +81,6 @@ resource "aws_lb_listener" "nginx_http" {
 }
 
 resource "aws_cloudwatch_log_group" "ecs_log_group" {
-  name              = "ecs-log-group"
+  name              = "/ecs/nginx"
   retention_in_days = 7
 }
-
-
