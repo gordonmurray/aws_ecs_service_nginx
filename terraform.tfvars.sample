@@ -1,0 +1,13 @@
+application_name = "example"
+
+region = "us-east-1"
+
+ecs_cluster_id = "arn:aws:ecs:us-east-1:000000000:cluster/ecs-cluster"
+
+ecs_task_execution_role_arn = "arn:aws:iam::000000000:role/ecs-task-execution-role"
+
+ecr_repository_url = "000000000.dkr.ecr.us-east-1.amazonaws.com/ecr-repository"
+
+load_balancer_arn = "arn:aws:elasticloadbalancing:us-east-1:000000000:loadbalancer/app/ecs-load-balancer/000000000"
+
+vpc_id = "vpc-000000000"
