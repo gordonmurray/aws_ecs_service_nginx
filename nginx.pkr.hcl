@@ -29,7 +29,9 @@ build {
 
   provisioner "shell" {
     inline = [
-      "echo 'Nginx image built using Packer'",
+     "echo 'Nginx image built using Packer'",
+      "sed -i 's/access_log\\ \\/var\\/log\\/nginx\\/access.log;/access_log\\ \\/dev\\/stdout;/g' /etc/nginx/nginx.conf",
+      "sed -i 's/error_log\\ \\/var\\/log\\/nginx\\/error.log;/error_log\\ \\/dev\\/stderr;/g' /etc/nginx/nginx.conf"
     ]
   }
 
@@ -41,7 +43,7 @@ build {
 
     post-processor "docker-push" {
       ecr_login    = true
-      aws_profile  = "gordonmurray"
+      aws_profile  = "voyager"
       login_server = "https://000000000.dkr.ecr.us-east-1.amazonaws.com/"
     }
   }
